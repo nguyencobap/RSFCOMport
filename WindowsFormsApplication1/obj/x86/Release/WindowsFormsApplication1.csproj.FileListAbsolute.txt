@@ -1,0 +1,16 @@
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\Interop.AMovie.dll
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Form1.resources
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Form2.resources
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.exe
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.pdb
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.manifest
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.application
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.exe.manifest
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Release\WindowsFormsApplication1.application
