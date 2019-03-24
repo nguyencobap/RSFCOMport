@@ -9,8 +9,9 @@ C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFor
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\ReadSerialFromCOMport.application
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\ReadSerialFromCOMport.exe
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\ReadSerialFromCOMport.pdb
-C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ReadSerialFromCOMport.Properties.Resources.resources
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ReadSerialFromCOMport.exe.manifest
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ReadSerialFromCOMport.application
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ReadSerialFromCOMport.exe
 C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ReadSerialFromCOMport.pdb
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form3.resources
+C:\Users\Nguyen Hai Nguyen\Documents\Arduino\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources

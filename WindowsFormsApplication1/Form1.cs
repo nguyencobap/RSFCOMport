@@ -20,9 +20,6 @@ namespace WindowsFormsApplication1
        private string filePath = System.IO.Path.GetTempPath() + "/ncb.txt";
        private string filePathCsv = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ncb.csv";
         
-       
-       
-        
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +31,7 @@ namespace WindowsFormsApplication1
             if (File.Exists(filePath)) {
                 File.Delete(filePath);
             }
+            Console.WriteLine("Init");
             label3.Text = "Chưa kết nối";
             label3.ForeColor = Color.Red;
 
@@ -45,7 +43,7 @@ namespace WindowsFormsApplication1
         void mBackgroundworker_DoWork(object sender, DoWorkEventArgs args) {
             File.AppendAllText(filePath, "Thời gian,Nhiệt độ,Độ ẩm", Encoding.UTF8);
             File.AppendAllText(filePath, Environment.NewLine);
-            while (true) {
+            while (!mBackgroundworker.CancellationPending) {
 
                 if (serialPort1.IsOpen)
                 {
@@ -67,15 +65,14 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Cổng COM đã đóng");
                     }
 
+                    //Data to temp
                     string third = DateTime.Now.ToString("HH:mm:ss dd-MM-yyyy");
-
                     string input = third + "," + data;
-
-
-                  
                     File.AppendAllText(filePath,input);
+
                     mBackgroundworker.ReportProgress(10,data);
                 }
+                Console.WriteLine("Running");
                 Thread.Sleep(1000);
             }
         }
@@ -127,39 +124,51 @@ namespace WindowsFormsApplication1
                         
             
         }
- 
+
+        private void disSerial() 
+        {
+            Console.WriteLine("Disconnecting");
+            mBackgroundworker.CancelAsync();
+            serialPort1.Close();
+            label3.Text = "Đã ngắt kết nối";
+            label3.ForeColor = Color.Red;
+            button1.Text = "Kết nối";
+            Console.WriteLine("Disconnected");
+        }
+
+        private void conSerial() 
+        {
+            comboBox1.DataSource = SerialPort.GetPortNames();
+            serialPort1.PortName = comboBox1.Text;
+            serialPort1.BaudRate = 9600;
+            try
+            {
+                serialPort1.Open();
+                label3.Text = "Đã kết nối";
+                label3.ForeColor = Color.Green;
+                button1.Text = "Ngắt kết nối";
+                if (!mBackgroundworker.IsBusy)
+                {
+                    mBackgroundworker.RunWorkerAsync();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cổng COM chưa kết nối");
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
             if (!serialPort1.IsOpen)
             {
-                serialPort1.PortName=comboBox1.Text;
-                serialPort1.BaudRate = 9600;
-                try
-                {
-                    serialPort1.Open();
-                    label3.Text = "Đã kết nối";
-                    label3.ForeColor = Color.Green;
-                    button1.Text = "Ngắt kết nối";
-                    if (!mBackgroundworker.IsBusy)
-                    {
-                        mBackgroundworker.RunWorkerAsync();
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Cổng COM chưa kết nối");
-                }
+                conSerial();
                 
             }
             else
             {
-                mBackgroundworker.CancelAsync();
-                serialPort1.Close();
-                label3.Text = "Đã ngắt kết nối";
-                label3.ForeColor = Color.Red;
-                button1.Text = "Kết nối";
+                disSerial();
 
             }
         }
@@ -248,6 +257,23 @@ namespace WindowsFormsApplication1
             
             
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+              disSerial();
+              if (File.Exists(filePath))
+              {
+                  File.Delete(filePath);
+              }
+            this.Hide();
+            Form3 frm3 = new Form3();
+            frm3.Show();
+            
+            
+            
+            
         }
 
 

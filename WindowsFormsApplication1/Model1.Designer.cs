@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-namespace ReadSerialFromCOMport
+namespace WindowsFormsApplication1
 {
     #region Contexts
     
