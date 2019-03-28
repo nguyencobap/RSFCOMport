@@ -34,10 +34,15 @@ namespace WindowsFormsApplication1
             Console.WriteLine("Init");
             label3.Text = "Chưa kết nối";
             label3.ForeColor = Color.Red;
-
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
            
             
            
+        }
+
+        void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         void mBackgroundworker_DoWork(object sender, DoWorkEventArgs args) {
@@ -57,9 +62,18 @@ namespace WindowsFormsApplication1
                         data = "0,0";
                         mBackgroundworker.CancelAsync();
                         serialPort1.Close();
-                        label3.BeginInvoke(new MethodInvoker(()=>  label3.Text = "Đã ngắt kết nối"));
-                        label3.BeginInvoke(new MethodInvoker(() => label3.ForeColor = Color.Red));
-                        button1.BeginInvoke(new MethodInvoker(() => button1.Text = "Kết nối"));
+                        try
+                        {
+                            label3.BeginInvoke(new MethodInvoker(() => label3.Text = "Đã ngắt kết nối"));
+                            label3.BeginInvoke(new MethodInvoker(() => label3.ForeColor = Color.Red));
+                            button1.BeginInvoke(new MethodInvoker(() => button1.Text = "Kết nối"));
+                        }
+                        catch (Exception)
+                        {
+                            
+                            
+                        }
+                        
                         
                         if(ex is UnauthorizedAccessException)
                             MessageBox.Show("Cổng COM đã đóng");
@@ -154,7 +168,7 @@ namespace WindowsFormsApplication1
             }
             catch (Exception)
             {
-                MessageBox.Show("Cổng COM chưa kết nối");
+                MessageBox.Show("Cổng COM chưa kết nối hoặc đang được sử dụng bởi ứng dụng khác");
             }
         }
 

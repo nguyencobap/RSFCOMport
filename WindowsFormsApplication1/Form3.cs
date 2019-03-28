@@ -42,11 +42,16 @@ namespace WindowsFormsApplication1
            
             label3.Text = "Chưa kết nối";
             label3.ForeColor = Color.Red;
-            
+            this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
           
 
            
 
+        }
+
+        void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void Form3_Load(object sender, EventArgs e)
