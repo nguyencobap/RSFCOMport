@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
 
         private void mBW_DoWork(object sender, DoWorkEventArgs args) 
         {
-            File.AppendAllText(filePath, "Thời gian,Nhiệt độ,Độ ẩm", Encoding.UTF8);
+            File.AppendAllText(filePath, "Thời gian,Nhiệt độ,Độ ẩm,Air Index", Encoding.UTF8);
             File.AppendAllText(filePath, Environment.NewLine);
             string data;
             var reader = new StreamReader(stream);
@@ -97,17 +97,19 @@ namespace WindowsFormsApplication1
             {
                 mSplited[0] = "0";
                 mSplited[1] = "0";
+                mSplited[2] = "0";
                
             }
-            string ts, hs;
+            string ts, hs, ps;
             try
             {
                 ts = mSplited[0];
                 hs = mSplited[1];
+                ps = mSplited[2];
             }
             catch (Exception)
             {
-                ts = hs = "0";
+                ts = hs = ps = "0";
 
             }
             if (mSplited != null)
@@ -118,6 +120,7 @@ namespace WindowsFormsApplication1
                 {
                     nhietdo.BeginInvoke(new MethodInvoker(() => nhietdo.Text = ts));
                     doam.BeginInvoke(new MethodInvoker(() => doam.Text = hs));
+                    ppm.BeginInvoke(new MethodInvoker(() => ppm.Text = ps));
                     SharedVar.temp = double.Parse(ts);
                     SharedVar.humi = double.Parse(hs);
                 }

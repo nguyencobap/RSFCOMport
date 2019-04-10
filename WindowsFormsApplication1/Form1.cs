@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
        private BackgroundWorker mBackgroundworker;
        private string filePath = System.IO.Path.GetTempPath() + "/ncb.txt";
        private string filePathCsv = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ncb.csv";
-        
+       private Boolean lightState = false;
         public Form1()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
         }
 
         void mBackgroundworker_DoWork(object sender, DoWorkEventArgs args) {
-            File.AppendAllText(filePath, "Thời gian,Nhiệt độ,Độ ẩm", Encoding.UTF8);
+            File.AppendAllText(filePath, "Thời gian,Nhiệt độ,Độ ẩm,Air Index", Encoding.UTF8);
             File.AppendAllText(filePath, Environment.NewLine);
             while (!mBackgroundworker.CancellationPending) {
 
@@ -95,26 +95,33 @@ namespace WindowsFormsApplication1
             int i = args.ProgressPercentage;
             string mSplit = args.UserState as string;
             string[] mSplited = mSplit.Split(',');
-            string ts,hs;
+            string ts,hs,ps;
             try
             {
+                
                 ts = mSplited[0];
                 hs = mSplited[1];
+                ps = mSplited[2];
+                Console.WriteLine(ts + hs + ps);
+               
             }
             catch (Exception)
             {
-                ts = hs = "0";
+              
+                ts = hs = ps = "0";
                 
             }
             if (mSplited != null)
             {
                 nhietdo.BeginInvoke(new MethodInvoker(() => nhietdo.Text = ts));
                 doam.BeginInvoke(new MethodInvoker(() => doam.Text = hs));
+                ppm.BeginInvoke(new MethodInvoker(() => ppm.Text = ps));
 
                 try
                 {
                     SharedVar.temp = double.Parse(ts);
                     SharedVar.humi = double.Parse(hs);
+                    
                 }
                 catch (FormatException)
                 {
@@ -154,7 +161,7 @@ namespace WindowsFormsApplication1
         {
             comboBox1.DataSource = SerialPort.GetPortNames();
             serialPort1.PortName = comboBox1.Text;
-            serialPort1.BaudRate = 9600;
+            serialPort1.BaudRate = 115200;
             try
             {
                 serialPort1.Open();
@@ -206,7 +213,17 @@ namespace WindowsFormsApplication1
         {
             if (serialPort1.IsOpen)
             {
-                serialPort1.Write("1");
+                if(lightState){
+                    button2.Text = "OFF";
+                    serialPort1.WriteLine(cbLightSelect.Text+"1");
+                    Console.WriteLine(cbLightSelect.Text + "1");
+                    lightState = !lightState;
+                } else{
+                    button2.Text = "ON";
+                    serialPort1.WriteLine(cbLightSelect.Text + "0");
+                    Console.WriteLine(cbLightSelect.Text + "0");
+                    lightState = !lightState;
+                }
             }
             else
             {

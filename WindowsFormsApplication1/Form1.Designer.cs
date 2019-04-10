@@ -44,6 +44,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ppm = new System.Windows.Forms.TextBox();
+            this.cbLightSelect = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -132,11 +136,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(324, 108);
+            this.button2.Location = new System.Drawing.Point(431, 201);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
-            this.button2.Text = "ON6";
+            this.button2.Text = "ON";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -152,7 +156,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(324, 159);
+            this.button4.Location = new System.Drawing.Point(157, 270);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -163,7 +167,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 210);
+            this.label6.Location = new System.Drawing.Point(201, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(157, 13);
             this.label6.TabIndex = 15;
@@ -173,30 +177,77 @@
             // 
             this.button5.Location = new System.Drawing.Point(324, 63);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(116, 23);
             this.button5.TabIndex = 16;
             this.button5.Text = "Kết nối qua WIFI";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(2, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 31);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Air Index";
+            // 
+            // ppm
+            // 
+            this.ppm.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ppm.Location = new System.Drawing.Point(138, 203);
+            this.ppm.Name = "ppm";
+            this.ppm.Size = new System.Drawing.Size(114, 53);
+            this.ppm.TabIndex = 8;
+            // 
+            // cbLightSelect
+            // 
+            this.cbLightSelect.FormattingEnabled = true;
+            this.cbLightSelect.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.cbLightSelect.Location = new System.Drawing.Point(325, 203);
+            this.cbLightSelect.Name = "cbLightSelect";
+            this.cbLightSelect.Size = new System.Drawing.Size(100, 21);
+            this.cbLightSelect.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(322, 187);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Chọn đèn muốn bật";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(597, 223);
+            this.ClientSize = new System.Drawing.Size(597, 318);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nhietdo);
+            this.Controls.Add(this.ppm);
             this.Controls.Add(this.doam);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbLightSelect);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -225,6 +276,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox ppm;
+        private System.Windows.Forms.ComboBox cbLightSelect;
+        private System.Windows.Forms.Label label8;
     }
 }
 

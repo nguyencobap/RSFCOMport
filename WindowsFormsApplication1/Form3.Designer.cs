@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.button5 = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,30 +42,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbipAdr = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ppm = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(335, 100);
+            this.button5.Location = new System.Drawing.Point(335, 124);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(116, 23);
             this.button5.TabIndex = 30;
-            this.button5.Text = "Kết nối qua WIFI";
+            this.button5.Text = "Kết nối qua COM port";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // serialPort1
             // 
             this.serialPort1.PortName = "COM11";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(215, 247);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "© NguyenNH@bkav.com 2019";
             // 
             // button4
             // 
@@ -80,7 +73,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(376, 61);
+            this.button3.Location = new System.Drawing.Point(335, 64);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 27;
@@ -168,21 +161,50 @@
             this.tbipAdr.TabIndex = 31;
             this.tbipAdr.Text = "192.168.100.9";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 31);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Air Index";
+            // 
+            // ppm
+            // 
+            this.ppm.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ppm.Location = new System.Drawing.Point(149, 238);
+            this.ppm.Name = "ppm";
+            this.ppm.Size = new System.Drawing.Size(114, 53);
+            this.ppm.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(294, 320);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(157, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "© NguyenNH@bkav.com 2019";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 262);
+            this.ClientSize = new System.Drawing.Size(714, 342);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.tbipAdr);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nhietdo);
+            this.Controls.Add(this.ppm);
             this.Controls.Add(this.doam);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -198,7 +220,6 @@
 
         private System.Windows.Forms.Button button5;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label5;
@@ -210,6 +231,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbipAdr;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ppm;
+        private System.Windows.Forms.Label label7;
 
     }
 }
