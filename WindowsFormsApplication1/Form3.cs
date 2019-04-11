@@ -25,7 +25,6 @@ namespace WindowsFormsApplication1
         private string filePathCsv = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ncb.csv";
         private string ipAdr;
         
-        
         public Form3()
         {
             InitializeComponent();
@@ -88,18 +87,7 @@ namespace WindowsFormsApplication1
         private void mBW_ProgressChanged(object sender, ProgressChangedEventArgs args) {
             int i = args.ProgressPercentage;
             string mSplit = args.UserState as string;
-            string[] mSplited = new string[2];
-            try
-            {
-                mSplited = mSplit.Split(',');
-            }
-            catch (NullReferenceException) 
-            {
-                mSplited[0] = "0";
-                mSplited[1] = "0";
-                mSplited[2] = "0";
-               
-            }
+            string[] mSplited = mSplit.Split(',');
             string ts, hs, ps;
             try
             {

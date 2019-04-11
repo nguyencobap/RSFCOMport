@@ -51,7 +51,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(335, 124);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 23);
+            this.button5.Size = new System.Drawing.Size(129, 23);
             this.button5.TabIndex = 30;
             this.button5.Text = "Kết nối qua COM port";
             this.button5.UseVisualStyleBackColor = true;
